@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started with VueJS</title>
+
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript"
+              src="https://code.jquery.com/jquery-2.1.1.min.js">
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+    <!-- Import VueJS to handle user-interface -->
+    <script src="https://unpkg.com/vue"></script>
+
+    <!-- For making API GET requests -->
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="app">
+        {{message + ' Hello World!'}}
+      </div>
+  </div> <!-- end container -->
+
+
+
+<!-- SCRIPT -->
+
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!'
+        },
+        created: function() {
+          console.log('app created!');
+        },
+        updated: function() {
+          console.log('app updated!');
+        }
+      });
+
+
+    </script>
+
+  </body>
+</html>
