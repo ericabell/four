@@ -33,15 +33,16 @@
   <body>
     <div class="container">
       <div id="app">
+          <h1>The Magical Number Four!</h1>
 
           <label>Input Number</label>
           <input v-model="inputNumber">
-
-
         <button v-on:click="computePath"
           class="btn waves-effect waves-light">
           Compute
         </button>
+        <hr>
+        <h5>{{result}}</h5>
       </div>
   </div> <!-- end container -->
 
@@ -54,17 +55,20 @@
         el: '#app',
         data: {
           inputNumber: 20,
-          result: ''
-        },
-        created: function() {
-          console.log('app created!');
-        },
-        updated: function() {
-          console.log('app updated!');
+          result: 'this is the first'
         },
         methods: {
-          function computePath(num) {
-            // grab the number from the input and hand off to api
+          computePath: function() {
+            // grab the number from the input and make api request
+            var vm = this;
+            axios.get('http://localhost:3000/' + vm.inputNumber)
+              .then(function(response) {
+                console.log(response.data);
+                vm.result = response.data;
+              })
+              .catch(function (error) {
+                vm.result = 'Error! Could not reach the API. ' + error
+              });
           }
         }
       });
