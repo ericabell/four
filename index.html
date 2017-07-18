@@ -38,7 +38,7 @@
           <input v-model="inputNumber">
 
 
-        <button v-on:click="toggleLogin"
+        <button v-on:click="computePath"
           class="btn waves-effect waves-light">
           Compute
         </button>
@@ -53,13 +53,19 @@
       var app = new Vue({
         el: '#app',
         data: {
-          inputNumber: 20
+          inputNumber: 20,
+          result: ''
         },
         created: function() {
           console.log('app created!');
         },
         updated: function() {
           console.log('app updated!');
+        },
+        methods: {
+          function computePath(num) {
+            // grab the number from the input and hand off to api
+          }
         }
       });
 
